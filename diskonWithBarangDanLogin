@@ -2,14 +2,23 @@
 #NIM  : 2109106073
 import random
 import string
+from datetime import datetime
+tanggal = str(datetime.now())
 x=[]
-#LOGIN USER
+#LOGIN USER DAN ADMIN
 print("     LOGIN")
 print("===============")
 uname = input("USERNAME : ")
 pw = input("PASSWORD : ")
 if pw == '210':
   print("Login As User")
+elif pw == '073':
+    print("Login As Admin")
+    print("USERNAME : "+uname)
+    f = open("hasil.txt", "r")
+    isi = f.read()
+    print(isi)
+    exit()
 else:
   print("Login As Guest")  
 
@@ -105,13 +114,28 @@ while True:
     if kovo == 'JUMATBERKAH':
         print("DISKON 25%")
         print("TOTAL PEMBAYARAN      : Rp. %d"%disc25r)
+        with open("hasil.txt", "a") as hasil:
+            hasil.write("""
+Hasil Perhari : RP. %d"""%disc25r)
+            hasil.write(" /// ")
+            hasil.write(tanggal)
         break
     elif kovo == 'SENINBELANJA':
         print("DISKON 10%")
         print("TOTAL PEMBAYARAN      : Rp. %d"%disc10r)
+        with open("hasil.txt", "a") as hasil: 
+            hasil.write("""
+Penghasilan : RP. %d"""%disc10r)
+            hasil.write(" /// ")
+            hasil.write(tanggal)
         break
     elif kovo == '-':
          print("TOTAL PEMBAYARAN     : Rp. %d"%sum(x))
+         with open("hasil.txt", "a") as hasil:
+            hasil.write("""
+Hasil Perhari : RP. %d"""%sum(x))
+            hasil.write(" /// ")
+            hasil.write(tanggal)
          break
     else:
         print("Maaf, kode voucher tidak tersedia")
