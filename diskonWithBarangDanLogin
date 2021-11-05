@@ -116,7 +116,7 @@ while True:
         print("TOTAL PEMBAYARAN      : Rp. %d"%disc25r)
         with open("hasil.txt", "a") as hasil:
             hasil.write("""
-Hasil Perhari : RP. %d"""%disc25r)
+Penghasilan : RP. %d"""%disc25r)
             hasil.write(" /// ")
             hasil.write(tanggal)
         break
@@ -133,7 +133,7 @@ Penghasilan : RP. %d"""%disc10r)
          print("TOTAL PEMBAYARAN     : Rp. %d"%sum(x))
          with open("hasil.txt", "a") as hasil:
             hasil.write("""
-Hasil Perhari : RP. %d"""%sum(x))
+Penghasilan : RP. %d"""%sum(x))
             hasil.write(" /// ")
             hasil.write(tanggal)
          break
